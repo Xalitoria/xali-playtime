@@ -1,5 +1,4 @@
 import mc.xalitoria.gradle.sibling
-import mc.xalitoria.gradle.repo.kotlinx
 
 plugins {
     kotlin("plugin.serialization")
@@ -11,8 +10,8 @@ plugins {
 dependencies {
     implementation(sibling("common"))
     api(libs.kaml)
-    api(kotlinx("serialization-json"))
-    api(kotlinx("coroutines-core"))
+    api(libs.kotlinx.serialization)
+    api(libs.kotlinx.coroutines)
     api(libs.exposed.core)
     api(libs.exposed.jdbc)
     api(libs.bundles.database)
@@ -20,7 +19,7 @@ dependencies {
     compileOnly(libs.plan) { isTransitive = false }
     testImplementation(libs.kaml)
     testImplementation(libs.plan)
-    testImplementation(kotlinx("serialization-json"))
+    testImplementation(libs.kotlinx.serialization)
     testImplementation(libs.bundles.exposed)
     testImplementation(libs.bundles.database)
 }
